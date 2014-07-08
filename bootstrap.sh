@@ -11,21 +11,19 @@ fi
 
 if [ ! -d ~/.homesick/repos/prezto ]; then
 	echo "Installing Prezto."
-	homeshick clone -b sorin-ionescu/prezto
-fi
-
-if [ ! -d ~/.homesick/repos/homeshick-prezto ]; then
-	echo "Installing wrappers for the default Prezto and Zsh configuration."
-	homeshick clone -b mrmachine/homeshick-prezto
-	# TODO: Backup existing files.
-	homeshick link homeshick-prezto
-	cp ~/.homesick/repos/homeshick-prezto/template/.z* ~
+	homeshick clone sorin-ionescu/prezto
 fi
 
 if [ ! -d ~/.homesick/repos/dotfiles ]; then
 	echo "Creating a dotfiles castle to manage user configuration."
 	homeshick generate dotfiles
-	homeshick track dotfiles ~/.zlogin ~/.zlogout ~/.zpreztorc ~/.zprofile ~/.zshenv ~/.zshrc
+fi
+
+if [ ! -d ~/.homesick/repos/homeshick-prezto ]; then
+	echo "Installing the default Prezto and Zsh configuration."
+	homeshick clone mrmachine/homeshick-prezto
+	cp -R ~/.homesick/repos/homeshick-prezto/template ~/.homesick/repos/dotfiles/home
+	homeshick link
 fi
 
 ZSH=`which zsh`
