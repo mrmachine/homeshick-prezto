@@ -3,7 +3,7 @@ command -v zsh >/dev/null 2>&1 || {
 	exit 1
 }
 
-if [ ! -d ~/.homesick ]; then
+if [ ! -d ~/.homesick/repos/homeshick ]; then
 	echo "Installing Homeshick."
 	git clone https://github.com/andsens/homeshick.git ~/.homesick/repos/homeshick
 	source ~/.homesick/repos/homeshick/homeshick.sh
