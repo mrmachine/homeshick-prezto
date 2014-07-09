@@ -35,4 +35,5 @@ if [ $ZSH != $SHELL ]; then
 	chsh -s $ZSH
 fi
 
-echo "Prezto and Zsh installed. Open a new terminal window or tab."
+echo "Prezto and Zsh installed. Open a new terminal window or tab, then add a"
+echo "remote origin for your dotfiles castle and push an initial commit."
