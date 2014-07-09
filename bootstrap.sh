@@ -7,6 +7,7 @@ if [ ! -d ~/.homesick ]; then
 	echo "Installing Homeshick."
 	git clone https://github.com/andsens/homeshick.git ~/.homesick/repos/homeshick
 	source ~/.homesick/repos/homeshick/homeshick.sh
+	homeshick link homeshick
 fi
 
 if [ ! -d ~/.homesick/repos/prezto ]; then
@@ -23,10 +24,8 @@ if [ ! -d ~/.homesick/repos/homeshick-prezto ]; then
 	echo "Installing the default Prezto and Zsh configuration."
 	homeshick clone mrmachine/homeshick-prezto
 	cp -R ~/.homesick/repos/homeshick-prezto/template/ ~/.homesick/repos/dotfiles/home
+	homeshick link dotfiles
 fi
-
-echo "Linking castles."
-homeshick link
 
 ZSH=`which zsh`
 
