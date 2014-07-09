@@ -22,7 +22,7 @@ fi
 if [ ! -d ~/.homesick/repos/homeshick-prezto ]; then
 	echo "Installing the default Prezto and Zsh configuration."
 	homeshick clone mrmachine/homeshick-prezto
-	cp -R ~/.homesick/repos/homeshick-prezto/template ~/.homesick/repos/dotfiles/home
+	cp -R ~/.homesick/repos/homeshick-prezto/template/ ~/.homesick/repos/dotfiles/home
 	homeshick link
 fi
 
